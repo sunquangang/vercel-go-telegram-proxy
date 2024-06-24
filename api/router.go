@@ -9,13 +9,13 @@ import (
 
 var router *gin.Engine
 
-var apiUrl = "https://api.telegram.org"
+var apiUrl = "https://kevin.dev.hokdo.net"
 
 func init() {
 	router = gin.Default()
 	router.Any("/*path", func(context *gin.Context) {
 		uri := context.Param("path")
-		if !strings.Contains(uri, "bot") {
+		if !strings.Contains(uri, "api") {
 			context.String(http.StatusNotFound, "404 Not found")
 			return
 		}
